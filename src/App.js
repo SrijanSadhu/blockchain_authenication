@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import SignIn from "./Pages/Signin";
+import SignUp from "./Pages/Signup";
+import Home from "./Pages/Home";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const email = localStorage.getItem("email");
+return (
+	<div className="App">
+	<BrowserRouter>
+		<Routes>
+		<Route exact path="/" element={<SignIn />} />
+		<Route path="/Signup" element={<SignUp />} />
+		<Route
+			path="/Home"
+			element={email ? <Home /> : <Navigate to="/" />}
+		/>
+		</Routes>
+	</BrowserRouter>
+	</div>
+);
 }
 
 export default App;
