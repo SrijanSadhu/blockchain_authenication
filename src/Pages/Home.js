@@ -4,10 +4,12 @@ import { useNavigate } from "react-router-dom";
 export default function Home() {
 const email = localStorage.getItem("email");
 const account = localStorage.getItem("account");
+const username = localStorage.getItem("username");
 
 const navigate = useNavigate();
 return (
 	<div>
+	<h3>Your username: {username}</h3>
 	<h3>Your account: {account} </h3>
 	<h3>Your email: {email} </h3>
 	<button

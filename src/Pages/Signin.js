@@ -1,6 +1,7 @@
 import * as React from "react";
 import { loadBlockchainData, loadWeb3 } from "../Web3helpers";
 import { useNavigate } from "react-router-dom";
+import logo from "../img/logo.jpg";
 
 export default function SignIn() {
 const [email, setEmail] = React.useState("");
@@ -50,9 +51,9 @@ React.useEffect(() => {
 return (
 	<div style={rootDiv}>
 	<img
-		src="https://media.geeksforgeeks.org/wp-content/uploads/20210318103632/gfg.png"
+		src={logo}
 		style={image}
-		alt="geeks"
+		alt="logo"
 	/>
 	<input
 		style={input}
